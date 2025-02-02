@@ -4,13 +4,13 @@ permalink: index.html
 
 # Please update this with your repository name and title
 repository-name: eYY-4yp-project-template
-title: Actite localization and natigation
+title: Active localization and navigation
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
 # Project Title
-Actite localization and natigation
+Active localization and navigation
 
 #### Team
 
@@ -45,8 +45,9 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Abstract
+This research aims to develop a navigation and path-planning algorithm that integrates visual SLAM with reinforcement learning for a ground-aerial multi-vehicle system. Autonomous vehicles have become essential for extreme environments such as search and rescue, disaster relief, and infrastructure inspection, where human presence is limited. The combination of unmanned ground vehicles (UGVs) and unmanned aerial vehicles (UAVs) enhances mission efficiency by leveraging the complementary strengths of both systems—UGVs provide endurance and payload capacity, while UAVs offer aerial surveillance and rapid maneuverability.
 
-Localization and mapping are crucial for swarm robotic systems to achieve coordinated autonomy in dynamic environments. Unlike single-robot SLAM, swarm robotics requires decentralized or cooperative approaches to efficiently share positional and environmental data among multiple agents. Techniques such as multi-agent SLAM, topological mapping, and probabilistic localization enable robust navigation while minimizing computational and communication overhead. Sensor fusion, incorporating LiDAR, IMU, and vision-based methods, enhances accuracy in GPS-denied environments.Focus to implement localization and mapping without using GPS for swarm system which includes UGC's and UAU's.Advanced strategies like collaborative loop closure, distributed pose graph optimization, and reinforcement learning improve adaptability and resilience in uncertain conditions. The integration of machine learning and neural networks further refines localization accuracy, making swarm robotic systems more efficient for applications in search-and-rescue, exploration, and industrial automation.
+Localization and mapping are crucial for swarm robotic systems to achieve coordinated autonomy in dynamic environments. Unlike single-robot SLAM, swarm robotics requires decentralized or cooperative approaches to share positional and environmental data among multiple agents efficiently. Techniques such as multi-agent SLAM, topological mapping, and probabilistic localization enable robust navigation while minimizing computational and communication overhead. Sensor fusion, incorporating LiDAR, IMU, and vision-based methods, enhances accuracy in GPS-denied environments. Focus on implementing localization and mapping without using GPS for swarm system which includes UGVs and UAUs. Advanced strategies like collaborative loop closure, distributed pose graph optimization, and reinforcement learning improve adaptability and resilience in uncertain conditions. The integration of machine learning and neural networks further refines localization accuracy, making swarm robotic systems more efficient for applications in search-and-rescue, exploration, and industrial automation.
 
 ## Related works
 
