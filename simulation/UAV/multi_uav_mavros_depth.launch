@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- General args -->
+    <arg name="est" default="ekf2"/>
+    <arg name="vehicle" default="iris_depth_camera"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+
+    <!-- Start Gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
+
+    <!-- Function-like macro for spawning UAVs -->
+    <group ns="uav0">
+        <arg name="ID" value="0"/>
+        <arg name="x" value="0"/>
+        <arg name="y" value="0"/>
+        <arg name="z" value="0"/>
+        <arg name="mavlink_udp_port" value="14560"/>
+        <arg name="mavlink_tcp_port" value="4560"/>
+        <arg name="fcu_url" default="udp://:14540@localhost:14580"/>
+
+        <!-- Modify SDF to add MAVLink TCP port -->
+        <arg name="cmd" default="xmlstarlet ed -d '//plugin[@name=&quot;mavlink_interface&quot;]/mavlink_tcp_port' -s '//plugin[@name=&quot;mavlink_interface&quot;]' -t elem -n mavlink_tcp_port -v $(arg mavlink_tcp_port) $(find px4)/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+        <param command="$(arg cmd)" name="model_description"/>
+
+        <!-- PX4 SITL -->
+        <node name="sitl_$(arg ID)" pkg="px4" type="px4" output="screen" args="$(find px4)/build/px4_sitl_default/etc -s etc/init.d-posix/rcS -i $(arg ID) -w sitl_$(arg vehicle)_$(arg ID) -d"/>
+
+        <!-- Spawn model in Gazebo -->
+        <node name="$(arg vehicle)_$(arg ID)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model"
+              args="-sdf -param model_description -model $(arg vehicle)_$(arg ID) -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+        <!-- MAVROS -->
+        <include file="$(find mavros)/launch/px4.launch">
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="tgt_system" value="1"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>
+
+    <group ns="uav1">
+        <arg name="ID" value="1"/>
+        <arg name="x" value="2"/>
+        <arg name="y" value="0"/>
+        <arg name="z" value="0"/>
+        <arg name="mavlink_udp_port" value="14561"/>
+        <arg name="mavlink_tcp_port" value="4561"/>
+        <arg name="fcu_url" default="udp://:14541@localhost:14581"/>
+        <arg name="cmd" default="xmlstarlet ed -d '//plugin[@name=&quot;mavlink_interface&quot;]/mavlink_tcp_port' -s '//plugin[@name=&quot;mavlink_interface&quot;]' -t elem -n mavlink_tcp_port -v $(arg mavlink_tcp_port) $(find px4)/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+        <param command="$(arg cmd)" name="model_description"/>
+        <node name="sitl_$(arg ID)" pkg="px4" type="px4" output="screen" args="$(find px4)/build/px4_sitl_default/etc -s etc/init.d-posix/rcS -i $(arg ID) -w sitl_$(arg vehicle)_$(arg ID) -d"/>
+        <node name="$(arg vehicle)_$(arg ID)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model"
+              args="-sdf -param model_description -model $(arg vehicle)_$(arg ID) -x $(arg x) -y $(arg y) -z $(arg z)"/>
+        <include file="$(find mavros)/launch/px4.launch">
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="tgt_system" value="2"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>
+
+    <group ns="uav2">
+        <arg name="ID" value="2"/>
+        <arg name="x" value="0"/>
+        <arg name="y" value="2"/>
+        <arg name="z" value="0"/>
+        <arg name="mavlink_udp_port" value="14562"/>
+        <arg name="mavlink_tcp_port" value="4562"/>
+        <arg name="fcu_url" default="udp://:14542@localhost:14582"/>
+        <arg name="cmd" default="xmlstarlet ed -d '//plugin[@name=&quot;mavlink_interface&quot;]/mavlink_tcp_port' -s '//plugin[@name=&quot;mavlink_interface&quot;]' -t elem -n mavlink_tcp_port -v $(arg mavlink_tcp_port) $(find px4)/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+        <param command="$(arg cmd)" name="model_description"/>
+        <node name="sitl_$(arg ID)" pkg="px4" type="px4" output="screen" args="$(find px4)/build/px4_sitl_default/etc -s etc/init.d-posix/rcS -i $(arg ID) -w sitl_$(arg vehicle)_$(arg ID) -d"/>
+        <node name="$(arg vehicle)_$(arg ID)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model"
+              args="-sdf -param model_description -model $(arg vehicle)_$(arg ID) -x $(arg x) -y $(arg y) -z $(arg z)"/>
+        <include file="$(find mavros)/launch/px4.launch">
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="tgt_system" value="3"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>
+</launch>
