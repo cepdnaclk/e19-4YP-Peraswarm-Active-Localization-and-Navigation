@@ -23,6 +23,7 @@ Active localization and navigation
 
 - Prof. Roshan Ragel, [email](roshanr@eng.pdn.ac.lk)
 - Dr. Isuru Nawinna, [email](isurunawinne@eng.pdn.ac.lk)
+- Ms. Narmada Balasooriya, [email](narmadabalasooriya@gmail.com)
 
 #### Table of content
 
