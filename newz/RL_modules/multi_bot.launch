@@ -1,0 +1,32 @@
+<launch>
+  <!-- Loop through 6 bots -->
+  <group ns="tb3_0">
+    <param name="robot_id" value="tb3_0"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_0" output="screen"/>
+  </group>
+
+  <group ns="tb3_1">
+    <param name="robot_id" value="tb3_1"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_1" output="screen"/>
+  </group>
+
+  <group ns="tb3_2">
+    <param name="robot_id" value="tb3_2"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_2" output="screen"/>
+  </group>
+
+  <group ns="tb3_3">
+    <param name="robot_id" value="tb3_3"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_3" output="screen"/>
+  </group>
+
+  <group ns="tb3_4">
+    <param name="robot_id" value="tb3_4"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_4" output="screen"/>
+  </group>
+
+  <group ns="tb3_5">
+    <param name="robot_id" value="tb3_5"/>
+    <node pkg="central_server" type="bot_connection.py" name="bot_client_5" output="screen"/>
+  </group>
+</launch>
