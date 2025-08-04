@@ -3,7 +3,7 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
+repository-name: e19-4YP-Peraswarm-Active-Localization-and-Navigation
 title: Active localization and navigation
 ---
 
