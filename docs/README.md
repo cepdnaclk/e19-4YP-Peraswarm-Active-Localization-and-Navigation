@@ -14,16 +14,16 @@ Active localization and navigation
 
 #### Team
 
-- e19167, H.D.N.S. JAYAWARDENA, [email](e19167@eng.pdn.ac.lk)
-- e19423, Weerasingha W.A.C.J, [email](e19423@eng.pdn.ac.lk)
+- e19167, H.D.N.S. JAYAWARDENA, [email](mailto:e19167@eng.pdn.ac.lk)
+- e19423, Weerasingha W.A.C.J, [email](mailto:e19423@eng.pdn.ac.lk)
 
 
 
 #### Supervisors
 
-- Prof. Roshan Ragel, [email](roshanr@eng.pdn.ac.lk)
-- Dr. Isuru Nawinna, [email](isurunawinne@eng.pdn.ac.lk)
-- Ms. Narmada Balasooriya, [email](narmadabalasooriya@gmail.com)
+- Prof. Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Dr. Isuru Nawinna, [email](mailto:isurunawinne@eng.pdn.ac.lk)
+- Ms. Narmada Balasooriya, [email](mailto:narmadabalasooriya@gmail.com)
 
 #### Table of content
 
@@ -244,8 +244,8 @@ To complement the rule-based A* planner, a Deep Q-Network (DQN) was developed fo
 
 [//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
 
-- [Project Repository](https://github.com/cepdnaclk/repository-name)
-- [Project Page](https://cepdnaclk.github.io/repository-name)
+- [Project Repository](https://github.com/cepdnaclk/e19-4YP-Peraswarm-Active-Localization-and-Navigation)
+- [Project Page](https://cepdnaclk.github.io/e19-4YP-Peraswarm-Active-Localization-and-Navigation/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
