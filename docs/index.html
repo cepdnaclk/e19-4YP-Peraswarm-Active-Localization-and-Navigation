@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>E19-4YP-Peraswarm-Active-Localization-and-Navigation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+	================================================== -->
+    <link rel="shortcut icon" href="images/background.png" type="image/x-icon">
+    <link rel="icon" href="images/background.png" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+    <!-- header 
+   ================================================== -->
+   <header id="header" class="row">   
+
+   		<div class="header-logo">
+	        <a href="index.html">Dazzle</a>
+	    </div>
+
+	   	<nav id="header-nav-wrap">
+			<ul class="header-main-nav">
+				<li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+				<li><a class="smoothscroll"  href="#pricing" title="pricing">Architecture</a></li>
+                <li><a class="smoothscroll"  href="#Experiments" title="pricing">Experiments</a></li>
+				<li><a class="smoothscroll"  href="#design" title="Design">Implementation</a></li>
+				<li><a class="smoothscroll"  href="#download" title="download">More</a></li>	
+			</ul>
+
+            <a class="smoothscroll" href="#team" class="button button-primary cta button11" id="button11">Team</a>
+		</nav>
+
+		<a class="header-menu-toggle" href="#"><span>Menu</span></a>    	
+   	
+   </header> <!-- /header -->
+
+
+   <!-- home
+   ================================================== -->
+   <section id="home" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000>
+
+        <div class="overlay"></div>
+        <div class="home-content">        
+
+            <div class="row contents" data-aos="fade-up">                     
+                <div class="home-content-left">
+
+                    <h3 >GROUP 28</h3>
+
+                    <h1 >
+                        Multi Robot Active Localisation &<br>
+                        Navigation<br>
+                    </h1>
+
+                    <div class="buttons" >
+                        <a href="https://github.com/cepdnaclk/E19-4YP-Peraswarm-Active-Localization-and-Navigation" target="_blank" class="button stroke" >
+                            <span class="icon-github" aria-hidden="true"></span>
+                            Project Repository
+                        </a>
+                    </div>                                         
+
+                </div>
+
+                <div class="home-image-right">
+                    <img src="images/SubT_UGV_Drone-1024x633.jpg">
+                </div>
+            </div>
+
+        </div> <!-- end home-content -->
+        <!-- end home-social-list -->
+
+        <div class="home-scrolldown">
+            <a href="#about" class="scroll-icon smoothscroll">
+                <span>Scroll Down</span>
+                <i class="icon-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </section> <!-- end home -->  
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about">
+
+        <div class="row about-intro">
+
+            <div class="col-full">
+                <h1 class="intro-header" data-aos="fade-up">About Our Project</h1>
+            </div>
+            <br>
+            <div class="col-full">
+                <br>
+                <p class="lead" data-aos="fade-up">
+                    In recent years, autonomous robotic systems have
+                    transitioned from being a topic of theoretical research to a
+                    critical component in various industries, including logistics,
+                    agriculture, and search and rescue. The next frontier in
+                    this evolution is the deployment of multi-robot systems,
+                    where a team of robots collaboratively performs complex
+                    tasks in shared environments. A major challenge in these
+                    systems is achieving robust and reliable Collaborative
+                    Simultaneous Localization and Mapping (C-SLAM) and
+                    navigation, especially in unknown, dynamic, and GPS-denied
+                    environments. While single-robot solutions are mature,
+                    extending these capabilities to a multi-robot team introduces
+                    significant complexities, including inter-robot communication,
+                    data fusion, and collision avoidance.
+                    To address these challenges, this paper proposes a novel
+                    hybrid framework for a multi-robot system consisting of
+                    Unmanned Ground Vehicles (UGVs) and Unmanned Aerial
+                    Vehicles (UAVs). The system`s modular design allows
+                    for the independent development and validation of key
+                    components, such as sensor fusion, SLAM, and navigation,
+                    before integration. This approach was particularly important
+                    given the computational demands of a multi-robot simulation,
+                    which required a distributed setup across virtual machines.
+                    This paper, therefore, presents the successful validation of
+                    these individual components, laying the groundwork for a
+                    future, fully integrated system.
+                    Our proposed architecture is built on a centralized server
+                    that processes sensor data from decentralized robots. This
+                    approach leverages the strengths of both centralized and
+                    decentralized paradigms: it allows for the creation of a single,
+                    coherent global map while maintaining the scalability and
+                    resilience of individual robots. The framework incorporates
+                    an Extended Kalman Filter (EKF) to fuse data from odometry
+                    and a LiDAR sensor, enhancing localization accuracy. For
+                    mapping, we utilize RTAB-Map, a well-established and
+                    robust graph-based SLAM algorithm, to generate local maps
+                    that are then merged at the central server.
+                    For navigation, the framework employs a hybrid strategy.
+                    It combines a traditional A-based global path planner, which
+                    provides an optimal path from the start to the goal, with a
+                    Deep Q-Network (DQN) model for local, reactive collision
+                    avoidance. This hybrid approach aims to combine the
+                    efficiency and completeness of A with the adaptive, learned
+                    behaviors of a reinforcement learning agent, enabling the
+                    robots to navigate efficiently while also handling unforeseen
+                    obstacles and dynamic changes in the environment. The
+                    remainder of this paper details the implementation of this
+                    modular framework, presents the results of the component
+                   wise validation, and discusses the implications and future
+                   work required to transition to a fully integrated, real-time
+                    multi-robot system.
+                </p>
+                <div class="about-how-content" data-aos="fade-up">
+                    <div class="about-how-steps block-1-2 block-tab-full group">
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Mapping</h3>
+                            <p><img src="images/mapping.png" alt="medical">
+                            </p> 
+                        </div>
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Disaster management</h3>
+                            <p><img src="images/disaster.jpg" alt="forency">
+                            </p> 
+                        </div>               
+                   
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Agriculture</h3>
+                            <p><img src="images/agro.jpg" alt="astronomy">
+                            </p> 
+                        </div>
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Warfare</h3>
+                            <p><img src="images/warfae.jpg" alt="agriculture">
+                            </p> 
+                        </div> 
+                        
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Astronomy</h3>
+                            <p><img src="images/RAT_rover_by_night.jpg" alt="Trafic">
+                            </p> 
+                        </div> 
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Inventory Management</h3>
+                            <p><img src="images/Inw_manag.jpgment.jpg" alt="Arciology">
+                            </p> 
+                        </div> 
+    
+                    </div>          
+               </div> <!-- end a -->
+            </div>                       
+            
+        </div>
+        <br>
+        <!-- <div class="row">
+            <div class="col-full">
+                <h1 class="intro-header"  data-aos="fade-up"></h1>
+                <p class="lead" data-aos="fade-up">Many devices are used in the field for image processing based on their filed as follows</p>
+                <center>
+                    <img src="images/h.png" alt="hardware" width="500" height="600">
+                </center>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <br>
+        <br> -->
+        <!-- <div class="row">
+            <div class="col-full">
+                
+                <p class="lead" data-aos="fade-up"><br>But due to offering following features at same time, FPGA is preferred in many fields</p>
+                <center>
+                    <img src="images/reason.png" alt="hardware" width="500" height="600">
+                </center>
+
+            </div>
+        </div>
+        <br>
+        <br> -->
+        <!-- <div class="row">
+            <div class="col-full">
+                <h1><br>What Is Our Project About?</h1>
+                <p class="lead" data-aos="fade-up">We are going to implement a salt and pepper noise filter in an FPGA.</p>
+                <center>
+                    <img src="images/Salt_paper.png" alt="Salt_paper" width="700" height="400">
+                </center>
+                <img src="images/Ave.png" alt="Average" width="500" height="400"><img src="images/median.png" alt="median" width="500" height="400">
+            </div>
+        </div>
+        <br>
+        -->
+
+        <div class="row about-how">
+          
+            <h1 class="intro-header" data-aos="fade-up">How The System Works?</h1>           
+
+            <div class="about-how-content" data-aos="fade-up">
+                <div class="about-how-steps block-1-2 block-tab-full group">
+                    <img src="images/diagram.png" alt="averaging" >
+                    <br>
+                    <br>
+                    <div class="bgrid step" data-item="1">
+                        <h3>Step 1</h3>
+                        <p>Multiple robots(TurtleBot3) run in a gazebo simulation enwironment. 
+                        </p> 
+                    </div>
+
+                    <div class="bgrid step" data-item="2">
+                        <h3>Step 2</h3>
+                        <p>Sensor data acces through the ros topics.
+                        </p> 
+                    </div>               
+               
+                    <div class="bgrid step" data-item="3">
+                        <h3>Step 3</h3>
+                        <p>Trainned Rainforcement model runniing on a sewer indiwidual connection established for robots.
+                        </p> 
+                    </div>
+
+                    <div class="bgrid step" data-item="4">
+                        <h3>Step 4</h3>
+                        <p>Get the response from the serwer and nawigate towards to the goal.
+                        </p> 
+                    </div>  
+
+                </div>           
+           </div> <!-- end about-how-content -->
+
+        </div> <!-- end about-how -->
+
+             
+        
+    </section> <!-- end about -->  
+
+    <!-- pricing
+    ================================================== -->
+    <section id="pricing">
+        <div class="row pricing-content">
+            <div class="row about-how">
+          
+                <h1 class="intro-header" data-aos="fade-up">Methodology</h1>           
+    
+                <div class="about-how-content" data-aos="fade-up">
+                    <div class="about-how-steps block-1 block-tab-full group">
+
+                        <div class="bgrid step" data-item="">
+                            <h3>Introduction</h3>
+                            <p>
+                                To investigate active localization and navigation in a multi-robot system, we designed and implemented a simulation-based framework using the Robot Operating System (ROS) Noetic and Gazebo 11 as the core middleware and simulation environment, respectively. The system consists of Unmanned Ground Vehicles (UGVs) and Unmanned Aerial Vehicles (UAVs), each simulated in separate virtual machines (VMs) and interfaced through a centralized SLAM architecture.
+                            </p>
+                        </div>
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Simulation Environment and Robot Platforms</h3>
+                            <p>
+                                The UGV platform selected for this study was the TurtleBot3, a compact differential-drive robot widely used in academic robotics research. It was chosen primarily due to its built-in visual sensors, which are compatible with visual SLAM methods. The UAV platform was based on the PX4 flight stack, utilizing the Iris drone model equipped with depth cameras to enable three-dimensional environmental perception. PX4 was integrated with ROS through the MAVROS interface, allowing communication between the flight controller and the ROS-based SLAM system.  
+                            </p> 
+                        </div>
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Centralized SLAM Architecture</h3>
+                            <!-- <p><img src="images/medianing.png" alt="medianining" width="300" height="200" > -->
+                                Our solution follows a centralized SLAM paradigm, in which sensor data from multiple agents is transmitted to a central server responsible for constructing and maintaining a global map. This architecture allows for data fusion across heterogeneous platforms (UAVs and UGVs), enabling coordinated mapping and localization. The key benefit of a centralized SLAM approach is the consistency of the global map, which facilitates collaboration between robots. However, it introduces challenges in communication latency and requires robust synchronization mechanisms.
+                            </p> 
+                        </div>               
+                   
+                        <div class="bgrid step" data-item=" ">
+                            <h3>System Configuration and Virtualization</h3>
+                            <!-- <p><img src="images/Skid.png" alt="Skid" width="150" height="200" ><img src="images/skid2.png" alt="skid2" width="150" height="200" > -->
+                                Due to hardware constraints, the system was distributed across three virtual machines (VMs), each running Ubuntu 18.04 LTS. One VM simulated the UGVs, another simulated the UAVs, and a third functioned as the centralized SLAM server. This setup offered modularity and facilitated easier configuration of inter-process communication through virtual networks. We adopted this VM-based deployment due to its scalability and the ease of establishing isolated yet connected simulation environments under limited computational resources. 
+                            </p> 
+                        </div>
+    
+                        <div class="bgrid step" data-item=" ">
+                            <h3>Multi-Robot Communication Framework</h3>
+                            <!-- <p><img src="images/Axi.png" alt="Axi" width="300" height="200" > -->
+                                To enable inter-VM communication across the distributed ROS environments, we utilized the fkie_multimaster package. This toolset allows multiple ROS masters to discover each other and share selected topics across machines, thus supporting a loosely coupled architecture suitable for our centralized SLAM framework. Despite its flexibility, we encountered performance limitations when attempting to run all three VMs simultaneously on the available hardware. As a result, SLAM development for UAVs and UGVs was conducted separately, and their outputs were later integrated offline.  
+                            </p> 
+                        </div> 
+                        <div class="bgrid step" data-item=" ">
+                            <h3>UGV SLAM</h3>
+                            <!-- <p><img src="images/data.png" alt="data" width="300" height="200" >  -->
+                                To achieve accurate robot localization in noisy environments, each robot employs an Extended Kalman Filter (EKF) to fuse data from onboard Inertial Measurement Units (IMU) and 2D LIDAR sensors. The EKF prediction step models motion dynamics using Jacobians and covariance matrices, assuming small time intervals (~1s) between updates. Linear accelerations and angular velocities from the IMU are used to predict the robot's new pose, while the update step incorporates LIDAR-based corrections. Pose estimates are used to transform sensor readings into the robot’s local coordinate frame. A local occupancy grid of size 60×60 cells (0.1m resolution) is constructed using Bresenham’s algorithm, with LIDAR beams marking free and occupied cells. This local map is updated at 1 Hz and published via the /local_map ROS topic for global merging.<br>
+                                Due to the resource constraints and partial progress in developing a full SLAM pipeline, a hybrid approach was adopted for final validation. RTAB-Map, a graph-based SLAM method well-suited for RGB-D input, was applied to the UGV simulation to generate local maps. A custom ROS-based script was then developed to merge these local maps into a cohesive global map. This served as a proof of concept for the centralized map integration strategy envisioned for the full multi-robot system.
+                            </p> 
+                        </div> 
+                        
+                        <div class="bgrid step" data-item=" ">
+                            <h3>UAV slam</h3>
+                            <!-- <p><img src="images/block.png" alt="block" width="300" height="200" >  -->
+                                The aerial component of our system was simulated using PX4-based Iris drones within the Gazebo 11 environment. The UAVs were equipped with simulated Intel RealSense depth cameras to enable 3D perception. PX4 SITL (Software-In-The-Loop) was used to provide flight control, while MAVROS acted as a middleware to bridge PX4 with ROS Noetic.
+We deployed the UAV simulation in a dedicated Ubuntu 18.04 VM. To support scalable multi-drone simulation, each UAV instance was launched with a unique MAVROS namespace and TF prefix. Visual SLAM was implemented using RTAB-Map, leveraging the UAVs’ depth and odometry data to build 3D Octomaps.
+A consistent TF tree was enforced by disabling MAVROS’s default TF publisher and integrating a custom transform pipeline to align all frames (e.g., map, odom, base_link, camera_link) under a centralized SLAM coordinate system. Each UAV published data to a separate ROS namespace, allowing structured topic handling.
+Due to hardware limitations, the UAV SLAM was developed and tested separately from the UGV system. Each UAV’s local Octomap was generated on the central server, and subsequently merged into a unified 3D map. Map merging was based on known initial positions and odometry, avoiding the need for computationally expensive loop closure or global frame registration.
+                            </p> 
+                        </div> 
+                        <div class="bgrid step" data-item=" ">
+                            <h3>A*-Based Hybrid Path Planning</h3>
+                            <!-- <p><img src="images/block.png" alt="block" width="300" height="200" > -->
+                                The navigation strategy integrates global and local planning using a hybrid A* approach. A centralized planner assigns each robot a global goal based on the merged occupancy map, while the local planner operates within a 6×6m (60×60 cells) dynamic window. A* search is performed in this window using a Euclidean-distance heuristic. If the global goal is visible, a direct path is computed; otherwise, the planner selects the best edge cell that leads toward the goal, promoting continuous movement even under partial observability. Planning is recalculated at every timestep, enabling real-time reaction to local changes. The planner comprises modular sub-functions, including extract_local_map(), get_neighbors(), a_star(), and find_edge_local_goal(), all integrated in local_global_planner().
+                            </p> 
+                        </div> 
+                        <div class="bgrid step" data-item=" ">
+                            <h3> DQN-Based Reinforcement Learning Navigation</h3>
+                            <!-- <p><img src="images/block.png" alt="block" width="300" height="200" >  -->
+                                To complement the rule-based A* planner, a Deep Q-Network (DQN) was developed for learning-based navigation. The model takes as input a 20×20 local occupancy grid and a 4D pose vector representing the robot’s position and goal coordinates. The grid input is processed via a convolutional layer (16 filters, 3×3 kernel, tanh activation) followed by max pooling and flattening. The pose vector passes through a fully connected layer with 32 ReLU units. The outputs are concatenated and fed into a dense layer with 128 ReLU units, with a final linear layer producing Q-values for four discrete actions: move forward, left, right, or stay. The model is trained using mean squared error (MSE) loss and the Adam optimizer with a learning rate of 1e-3. A target network is used to stabilize training, with weights periodically synchronized from the policy network. The reward function incentivizes reaching the goal, penalizes collisions and looping, and includes shaping based on heuristic progress toward the goal.
+                            </p> 
+                        </div> 
+                    </div>           
+               </div> <!-- end about-how-content -->
+    
+            </div> <!-- end about-how -->
+
+            <div class="col-full pricing-intro">
+                <br>
+                <h1 class="intro-header" data-aos="fade-up"><br>Our Technology stack</h1>
+                <br>
+            </div>
+            <br>
+                <div class="row">
+                    <div class="col-full plan-wrap">
+                        <div class="plan-block primary" data-aos="fade-up">
+                            <div class="plan-bottom-part">
+                                <ul class="plan-block-features-new">
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/gas.png" alt="Gazebo">
+                                            <span>Gazebo</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/Ros.png" alt="ROS">
+                                            <span>ROS</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/px4.png" alt="PX4">
+                                            <span >PX4</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/python.png" alt="Python">
+                                            <span>Python</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/cplus.png" alt="C++">
+                                            <span>C++</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-wrapper">
+                                            <img src="images/xml.jpg" alt="XML">
+                                            <span>XML</span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                
+                            </div>
+
+                        </div>
+                    </div> <!-- end plan-wrap -->             
+            </div> <!-- end pricing-table -->
+
+        </div> <!-- end pricing-content -->
+
+       
+        
+    </section> <!-- end pricing -->
+
+    <!-- experiments
+    ================================================= -->
+    <section id = "Experiments">
+        <div class="row about-how-content">
+            <div class="col-full">
+                <h1 class="intro-header" data-aos="fade-up">Experiments</h1>
+                <div>
+                    <h2 class="">Mapping</h2>
+                    <br>
+                    <h3>EKF-Based Sensor Fusion</h3>
+                    <p class="lead" data-aos="fade-up">
+                        The integration of an Extended Kalman Filter (EKF) significantly enhanced the accuracy and stability of pose estimation when compared to raw odometry alone. This was particularly evident in simulations involving turns or uneven terrain, where IMU data contributed to smoother and more reliable localization. Experiments showed that EKF-based trajectories exhibited minimal drift and maintained localization consistency even under moderate noise conditions. However, limitations emerged in static scenarios, where robots remained idle for extended periods—EKF updates stagnated, and errors accumulated. Furthermore, without global loop closure, minor misalignments were observed in the merged global map due to cumulative drift across multiple robots. The system also showed sensitivity to significant anomalies such as wheel slippage or erratic IMU spikes, indicating areas where more advanced fusion methods or adaptive filtering could be beneficial.
+                        <img src="images/EKF.png" alt="design1" width="800" height="500">
+                    </p>
+                </div>
+                <div>
+                    <h3>UGV RTAB SLAM Mapping</h3>
+                    <p class="lead" data-aos="fade-up">
+                        Figure X illustrates a comparison between the actual simulation environment and the corresponding occupancy grid map generated by the UGV using RTAB-Map SLAM. The left side of the image displays the original Gazebo environment, while the right side shows the 2D occupancy map produced during autonomous exploration. In the occupancy grid, bright pink regions represent detected obstacles, black cells indicate free and navigable space, and light gray areas denote unexplored regions not yet visited by the robot. This visual comparison demonstrates the SLAM system’s ability to accurately capture the spatial layout of the environment, including walls, corridors, and static obstacles. The observed alignment between the ground truth layout and the generated map confirms successful loop closures and effective data fusion, validating the robustness of the RTAB-Map-based SLAM pipeline in structured indoor scenarios.
+                        <img src="images/RTab.png" alt="design1" width="800" height="500">
+                    </p>
+                </div>
+                <br> 
+                <h2>Navigation</h2>  
+                <br>
+                <div>
+                    <h3>A*-Based Hybrid Path Planning</h3>
+                    <p class="lead" data-aos="fade-up">
+                        The hybrid A* navigation framework demonstrated the ability to generate smooth and goal-directed paths under a variety of environmental conditions. The use of a local planning window with dynamic edge-based goal redirection allowed robots to continue progressing even when the global goal was temporarily out of view. This intermediate goal strategy reduced the likelihood of stalling and ensured forward motion. Compared to traditional global-only or reactive methods, the hybrid approach yielded shorter paths, fewer collisions, and more stable behavior in cluttered spaces. Nonetheless, the planner’s performance was highly dependent on the accuracy of the local map and pose estimation. In cases where localization degraded or the environment contained narrow passages, the planner occasionally selected suboptimal edge goals, causing detours or temporary stagnation. These scenarios highlight the critical dependency between mapping, localization, and planning, suggesting that improvements in loop closure or pose correction could further enhance planning outcomes. Additionally, edge cases involving local minima emphasize the potential need for integrating recovery behaviors or escape heuristics.
+                        <!-- <img src="images/Ros.png" alt="design1" width="800" height="500"> -->
+                    </p>
+                </div> 
+                <br>
+                <div>
+                    <h3>DQN-Based Reinforcement Learning Navigation</h3>
+                    <p class="lead" data-aos="fade-up">
+                        The Deep Q-Network (DQN) demonstrated promising results in learning adaptive navigation strategies in partially observable environments. After sufficient training, the robot was capable of reaching goals while avoiding obstacles, exhibiting smooth and context-aware trajectories. The convolutional layers in the network allowed effective spatial reasoning over local maps, while the inclusion of pose vectors enabled goal-directed actions. Unlike rule-based planners, the learned policy could adapt to different obstacle layouts and goal placements without explicit reprogramming. However, the training process was hindered by sparse rewards and a small discrete action space, leading to a slower learning curve and occasional convergence to local optima. In deployment, the trained model was integrated into a ROS socket-based system where robots sent their local observations and odometry data to a central server. The server returned actions, which were executed locally after safety checks. This decentralized sensing with centralized decision-making architecture showcased the feasibility of offloading compute-heavy inference to a server while maintaining responsive navigation. Compared to A*, the DQN agent was more flexible in unknown or dynamically changing environments, but lacked formal guarantees of optimality and suffered from reduced interpretability—a key concern in safety-critical applications.
+                        <!-- <img src="images/Ros.png" alt="design1" width="800" height="500"> -->
+                        <video width="640" height="360" controls>
+                            <source src="clips/simulation_gazebo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </p>
+                </div>  
+                <br>          
+                
+            </div>
+                
+    </section>
+
+
+    <!-- download
+    ================================================== -->
+    <section id="download">
+
+        <div class="row">
+            <div class="col-full">
+                <h1 class="intro-header"  data-aos="fade-up">SLAM</h1>
+                <p>SLAM systems overcome these issues by allowing robots to map and localize themselves simultaneously. Different SLAM algorithms employ various mapping techniques and optimization strategies to improve localization and mapping accuracy. Different SLAM algorithms employ varying mapping methods that impact both memory efficiency and real-world applicability. Sparse 3D mapping, used in <a href="https://ieeexplore.ieee.org/document/8421746" target="_blank">VINS-Mono</a> ORB- [11], DSO [12], and OpenVSLAM [13] is highly memory-efficient as it stores only key frames and essential feature points, minimizing redundancy while maintaining localization accuracy. However, it lacks the dense structural detail needed for high-resolution scene reconstruction. On the other hand, semi-dense and dense 3D mapping approaches, such as LSD-SLAM [14], Laser and Visual SLAM v[15], and X-SLAM [16], store significantly more data, leading to higher memory consumption but providing richer environmental details. SLAIM [17], utilizing a hash map voxel-based approach with Neural Radiance Fields (NeRF), achieves efficient memory usage while maintaining high-quality 3D reconstructions. Meanwhile, SGS-SLAM[18] , leveraging Gaussian splatting and multi-channel optimization, requires extensive memory but enables semantic scene understanding. Sparse mapping techniques are well-suited for mobile and low-power devices, while dense methods cater to high-fidelity reconstructions, trading off memory efficiency for detail. So, the memory efficiency in a swarm robot system is critical using oct-map for mapping with reinforcement learning both memory efficiency and map efficiency can be increased. To address the challenges of localization and mapping, SLAM algorithms adopt different techniques tailored to specific environments. Feature-based methods, such as ORB-SLAM2[19] and OpenVSLAM [13], perform exceptionally well in structured settings with distinct visual landmarks but struggle in low-texture areas. Direct methods like DSO [12] and LSD-SLAM [14] work directly on pixel intensities, making them robust in dynamic or low-texture environments but computationally demanding. VINS-Mono[20] ,integrating IMU data, enhance localization precision in GPS-denied environments, making them particularly useful for drones and autonomous robots. Laser and Visual SLAM ,combining LiDAR and visual data, improves mapping in low-light and large-scale scenarios, where camera-only solutions may fail. X-SLAM[21] , utilizing Complex-Step Finite Difference (CSFD) for optimization, enhances convergence speed and reduces computational overhead. Meanwhile, SLAIM[22]  and SGS SLAM [23], leveraginng machine learning, enable high-fidelity and semantic mapping, pushing SLAM towards AI-driven autonomous navigation. These diverse methodologies highlight how different SLAM approaches optimize for factors such as robustness, accuracy, and computational efficiency. The achievements of these SLAM methods vary based on their design goals and practical applications. VINS Mono[20] and OKVIS achieve high localization accuracy in robotics and UAVs, particularly in GPS-denied environments. At the same time, ORB-SLAM2[19] and OpenVSLAM [24] provide flexible, real-time visual odometry, making them widely used in augmented reality (AR) and mobile robotics. DSO [25] and LSD-SLAM [26] are particularly effective in low texture and dynamic environments, making them suitable for autonomous driving and UAV navigation. Laser and Visual SLAM enhances localization in large-scale industrial settings by leveraging LiDAR-based depth perception. X-SLAM and SGS-SLAM, focusing on scalability and semantic scene understanding, contribute to advancements in urban planning, robotics, and mixed reality. Meanwhile, SLAIM[22] , with its NeRF-based representation, provides state-of-the-art tracking and 3D reconstruction, making it highly valuable for robotics, AR/VR, and high-fidelity mapping in autonomous systems. Collectively, these SLAM approaches drive innovation across diverse domains, from indoor navigation and self-driving cars to industrial automation and immersive augmented reality experiences.</p>
+
+                <!-- <img src="images/perfo.png" alt="Perfomance"> -->
+                <br>
+
+                <h1 class="intro-header"  data-aos="fade-up">Reinforcement Learning</h1>
+                <p>
+                    Deep Reinforcement Learning (DRL) has become a powerful tool in solving complex decision-making problems in robotics, particularly in navigation and multi-agent coordination. Traditional approaches like rule-based path planning and heuristic optimization have limitations when dealing with dynamic environments and real-time adjustments. Recent studies show that DRL-based techniques can overcome these challenges by learning from experience and making adaptive decisions.
+Mondal et al. [27] propose a framework based on DRL for coordinating UAVs and UGVs in a collaborative route-planning task. Given their limited battery life, UAVs depend on UGVs as mobile charging stations to extend their operational time. The study introduces an attention-based learning model that enables both types of vehicles to optimize their routes effectively, ensuring minimal travel time while adhering to energy constraints. The results demonstrate that the DRL-based approach outperforms traditional heuristic methods, showcasing its effectiveness in real-world applications that require autonomous decision-making.
+In this system, the problem is modeled as a Markov Decision Process (MDP). The state of the robot is the combination of the robot’s current position, fuel level, and, the mission assigned to the robot. The action space includes visiting and recharging. The reward they have defined as a negative value of mission time. The transition function updates the current state based on the action, fuel level and
+Similarly, Zhu and Zhang [5] review the advancements of DRL-based mobile robot navigation and its impact on real-world applications. Their work categorizes navigation into four key areas: obstacle avoidance, indoor navigation, multi-robot navigation, and social navigation. The study highlights how DRL improves navigation by allowing robots to learn directly from sensor data, unlike traditional methods that require pre-mapped environments. However, the review also identifies challenges such as sensor dependency, generalization issues, and the need for safer real-world deployment strategies.
+Together, these studies highlight the growing role of DRL in enhancing autonomous mobility and decision-making. While DRL-based models have shown promising results in optimizing routes and improving navigation efficiency, further research is needed to address issues related to real-time adaptability, large-scale deployment, and system robustness in dynamic environments.
+In traditional SLAM, robots often move randomly to map their environment. This random movement can result in inefficiencies, as there may be areas that remain unexplored. In contrast, reinforcement learning influences a robot's movements based on rewards. As a result, robots learn to identify the best routes, enabling them to explore their surroundings more effectively and cover the area more quickly, rather than relying on random mapping.
+
+                </p>
+                <br>
+                <!-- <img src="images/budget3.png" alt="budget3">
+
+                <h1 class="intro-header"  data-aos="fade-up">Timeline</h1>
+
+                <img src="images/Timiline.png" alt="Timeline"> -->
+
+            </div>
+        </div>
+
+    </section> <!-- end download --> 
+        
+    <!-- Design
+    ================================================== -->
+    <section id="design">
+            
+        <div class="row">
+            <div class="col-full">
+                <h1>Implementation</h1>
+            
+                <div class="bgrid step" data-item="1">
+                    <h3>System Configuration and Virtualization</h3>
+                    <p>Due to hardware constraints, the system was distributed across three virtual machines (VMs), each running Ubuntu 18.04 LTS. One VM simulated the UGVs, another simulated the UAVs, and a third functioned as the centralized SLAM server. This setup offered modularity and facilitated easier configuration of inter-process communication through virtual networks. We adopted this VM-based deployment due to its scalability and the ease of establishing isolated yet connected simulation environments under limited computational resources. 
+                    </p> 
+                </div>
+
+                <div class="bgrid step" data-item="2">
+                    <h3>Multi-Robot Communication Framework</h3>
+                    <p>To enable inter-VM communication across the distributed ROS environments, we utilized the fkie_multimaster package. This toolset allows multiple ROS masters to discover each other and share selected topics across machines, thus supporting a loosely coupled architecture suitable for our centralized SLAM framework. Despite its flexibility, we encountered performance limitations when attempting to run all three VMs simultaneously on the available hardware. As a result, SLAM development for UAVs and UGVs was conducted separately, and their outputs were later integrated offline.
+
+                    </p> 
+                </div>               
+           
+                <div class="bgrid step" data-item="3">
+                    <h3>Mapping Approaches and Data Representation</h3>
+                    <p>SLAM for the UGVs was based on two-dimensional occupancy grid mapping, while UAVs employed 3D OctoMap representations to exploit aerial perspectives. Both map types represent space using probabilistic occupancy values. Specifically:
+                        <br>
+                        A value of 0 indicates free space<br>
+                        A value of -1 indicates unexplored regions<br>
+                        Values between 1 and 99 represent the likelihood of occupancy<br>
+                        A value of 100 is reserved to denote the robot’s current position<br>
+                        Each map was divided into discrete unit squares of 5 × 5 cm resolution, enabling fine-grained environmental representation suited for precise navigation and planning tasks.
+                        
+                    </p> 
+                </div>
+
+                <div class="bgrid step" data-item="4">
+                    <h3>SLAM Development and Map Integration</h3>
+                    <p>Due to the resource constraints and partial progress in developing a full SLAM pipeline, a hybrid approach was adopted for final validation. RTAB-Map, a graph-based SLAM method well-suited for RGB-D input, was applied to the UGV simulation to generate local maps. A custom ROS-based script was then developed to merge these local maps into a cohesive global map. This served as a proof of concept for the centralized map integration strategy envisioned for the full multi-robot system.
+
+                    </p> 
+                </div>  
+
+                <div class="bgrid step" data-item="4">
+                    <h3>Multi-Robot Map Merging Strategy                    </h3>
+                    <p>To construct a unified environmental representation from separate SLAM outputs, we developed a custom ROS node in Python to merge occupancy grid maps from three TurtleBot3-based UGVs. This node subscribes to each robot’s /map and /odom topics and performs time-aware, position-based integration into a centralized global occupancy map.
+                    </p> 
+                </div>  
+                <div class="bgrid step" data-item="4">
+                    <h3>Asynchronous Topic Sampling and Synchronization</h3>
+                    <p>Although the individual robots published map and odometry data at different frequencies, the merger script implemented a uniform sampling strategy. A fixed-rate loop (20 Hz) processed one robot’s map at a time, ensuring that updates occurred at regular intervals and maintained consistent state. This approach provided lightweight temporal synchronization without relying on hardware-level time stamping or synchronization services like message filters.
+
+                    </p> 
+                </div>  
+                <div class="bgrid step" data-item="4">
+                    <h3>Spatial Alignment and Merging Logic</h3>
+                    <p>Each local map was aligned with the global map using its pose and origin offsets. For every known cell in the local map (i.e., cells not marked -1), the script calculated the corresponding world coordinates and translated these into indices within the global occupancy grid.
+                        The merging policy followed a priority-based approach:<br>
+                        Unknown cells (-1) in the global map were updated with any known local values.<br>
+                        Obstacle cells (100) in local maps took precedence and overwrote other values.<br>
+                        Free space (0) was added if it revealed previously unexplored regions.<br>
+                        Cells with no new information were left unchanged.<br>
+                        This approach prioritized obstacle certainty, preserved map sparsity, and minimized incorrect overwrites due to sensor noise or alignment drift.
+                        
+                    </p> 
+                </div> 
+                
+                <div class="bgrid step" data-item="4">
+                    <h3>Visualization and Statistics
+                    </h3>
+                    <p>The node also published real-time robot position markers via visualization_msgs/Marker and continuously logged map statistics such as the number of known, free, and occupied cells. These insights aided in debugging, performance tuning, and analysis of map completeness.
+
+                    </p> 
+                </div>  
+
+                <div class="bgrid step" data-item="4">
+                    <h3>Transfer from A* to RL-Based Navigation</h3>
+                    <p>Integrating a Reinforcement Learning (RL) module for navigation offers a more adaptive and learning-driven alternative to classical path planning algorithms like A*. Unlike rule-based planners that rely heavily on explicit maps and deterministic heuristics, RL enables robots to learn optimal navigation policies through trial and error, even in partially observable or dynamic environments. This allows for smoother decision-making, better obstacle avoidance in cluttered spaces, and adaptability to new layouts without reprogramming. RL can also optimize behaviors that go beyond reaching a goal—such as energy efficiency, smooth trajectories, or multi-objective tasks.
+                        However, RL comes with several trade-offs. Training the model is computationally intensive and time-consuming, often requiring simulated environments or large amounts of interaction data. It may suffer from sample inefficiency, local minima, or instability during training. Moreover, once trained, the RL agent might not generalize well to new environments without further fine-tuning, unlike classical planners which can immediately adapt to new maps. RL agents also lack guaranteed optimality and explainability, which makes safety-critical applications more challenging.                        
+                    </p> 
+                </div>  
+                <div class="bgrid step" data-item="4">
+                    <h3>RL Model
+                    </h3>
+                    <p>The reinforcement learning model is implemented using Deep Q-Network (DQN) architecture using TensorFlow/Keras, designed for robot navigation through reinforcement learning. This network takes two primary inputs: a 20×20 local occupancy grid and a 4-dimensional pose vector. The grid input captures the local environment around the robot, including obstacles, free space, and unknown regions, and is processed through a convolutional layer with 16 filters (3×3 kernel, using tanh activation), followed by a max pooling layer and a flattening operation to produce a spatial feature vector. Simultaneously, the pose input—which typically encodes the robot's current position and goal coordinates (e.g., [x, y, goal_x, goal_y])—is passed through a dense layer with 32 ReLU-activated units. These two feature vectors are then concatenated and processed through a fully connected dense layer with 128 ReLU-activated units, enabling the model to integrate spatial perception with navigational intent. The output layer is a dense layer with a linear activation function, producing Q-values corresponding to the four discrete actions available to the robot (e.g., move forward, left, right, or stay). The model is trained using the mean squared error (MSE) loss function to minimize prediction error in Q-values, and uses the Adam optimizer with a learning rate of 1e-3 for efficient and adaptive learning. During training, two identical networks are maintained: the policy_net, which is actively trained and used for action selection, and the target_net, which is periodically updated to stabilize Q-value targets. The architecture is initialized using dummy predictions before training to ensure proper weight allocation. Overall, this DQN model learns to map spatial and pose-based inputs to optimal navigation actions, enabling the robot to develop obstacle avoidance, directional alignment, and contextual decision-making over time.
+
+                    </p> 
+                </div>  
+                <div class="bgrid step" data-item="4">
+                    <h3>Reward Function
+                    </h3>
+                    <p>This reward function is designed to guide a robot toward reaching a navigation goal in a grid environment while avoiding obstacles, exploring efficiently, and choosing optimal actions. It incorporates both positive reinforcement for desired behaviors and penalties for undesired ones. It creates a balance between:Reaching the goal quickly,Avoiding collisions,Exploring new space,Avoiding loops, and Planning safe moves. Used a queqe to track previous positions and identify looping and added penalty also added huge penalty when colliding. To train the model with the A* use heuristic and add rewards when reducing the displacement to the goal. 
+                    </p> 
+                </div> 
+                <div class="bgrid step" data-item="4">
+                    <h3>Training</h3>
+                    <p>The training script implements a Deep Q-Learning framework for robotic navigation in a grid-based environment. The setup involves initializing a 60×60 global occupancy grid with predefined obstacles and assigning navigation tasks using a dictionary (robot_goal_map) that maps 10 distinct start-goal pairs. The robot operates using a discrete 4-action space: up, down, left, and right. At each episode, the robot's pose and goal are reset according to the episode index. The local state consists of a 20×20 grid centered on the robot's current position (state_grid) and a 4D pose vector (state_pose) representing the robot and goal coordinates. These inputs are fed into a convolutional neural network (CNN) combined with fully connected layers, defined in the policy_net, which outputs Q-values for the available actions.
+                        The training loop follows an epsilon-greedy policy to balance exploration and exploitation: it selects either a random action or the action with the highest predicted Q-value. The safe_move function ensures that the robot avoids invalid or dangerous movements. The environment step, handled by env_step, returns the updated local map, computed reward, and a boolean indicating whether the episode has ended. Transitions are stored in a replay memory buffer (deque), from which mini-batches are sampled to update the model. Q-value targets are computed using the target_net, and the policy_net is trained with temporal difference updates. To stabilize learning, the target network’s weights are periodically synchronized with those of the policy network. Epsilon is decayed after each episode to gradually reduce exploration, and checkpoints are saved every 50 episodes to preserve model progress.
+                        The script’s key strengths include its CNN-based spatial reasoning, pose fusion for goal-oriented behavior, experience replay for sample efficiency, target network stabilization, and use of multiple start-goal pairs to encourage generalization. It also features safeguards like safe movement and checkpointing. However, it has limitations such as the absence of frame skipping or adaptive time penalties, fixed epsilon decay schedules, a hardcoded 4-action space, and sparse goal rewards that may slow learning. Enhancements like shaped rewards, curriculum learning, support for multi-agent environments, Double DQN for reduced overestimation, and improved visualization/logging could significantly improve the training efficiency and robustness.
+                        
+                    </p> 
+                </div> 
+                <div class="bgrid step" data-item="4">
+                    <h3>Communication</h3>
+                    <p>Implemented a socket-based server that runs on a server and serves a trained Deep Q-Network (DQN) navigation model for multi-robot coordination. This server listens for incoming connections from up to six robots over a TCP/IP socket and uses SSH tunneling to receive data from each robot. Each robot sends its current local occupancy grid map (as a flattened scan input) and odometry data (pose vector) in JSON format. Upon receiving this data, the server preprocesses the inputs and feeds them into the preloaded TensorFlow model to predict the best navigation action. The predicted action, represented as a direction vector (e.g., move up, down, left, or right), is sent back to the robot as a JSON response.
+                        On the robot side, a ROS-based client node establishes the SSH tunnel to the server and continuously sends sensor inputs (local map and odometry). It receives the predicted action and translates it into a motion command. The robot then computes the angle required to align with the predicted direction, performs a safety check using its local occupancy map (e.g., verifying the next few cells in the predicted direction are free), and either executes the action or selects an alternative safe action if the path is blocked. This architecture enables decentralized sensing and actuation while centralizing decision-making, promoting both scalability and consistency in multi-robot systems operating under a shared reinforcement learning policy.                        
+                    </p> 
+                    <br>
+                    <br>
+                </div> 
+
+            </div>
+             
+                            
+            
+        </div>
+            
+       
+    </section>
+
+    
+     <!-- team
+    ================================================== -->
+
+    <section id="team">
+
+        <div class="row">
+            <div class="col-twelve" style="margin-top: -40px;">
+                <h1 class="intro-header" data-aos="fade-up">Contributors</h1>
+            </div>   		
+        </div>   	
+
+        <div class="row owl-wrap">
+
+            <div id="testimonial-slider"  data-aos="fade-up">
+
+                <div class="slides owl-carousel">
+
+                    <!-- <div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="images/avatars/drkamalanath.jpg" alt="Profile Image" class="profile-img">
+                            </div>
+                            <div class="card-body">
+                                <h1 class="job">Our Advisor</h1>
+                                <h2 class="name">Dr. Id</h2>
+                                <h3 class="title">Senior Lecturer</h3>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="fab social-icon"><span class="icon-linkedin" aria-hidden="true"></span></a>
+                            </div>
+                        </div>             
+                    </div>  -->
+
+                    <div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="images/avatars/Mahela.jpg" alt="Profile Image" class="profile-img">
+                            </div>
+                            <div class="card-body">
+                                <h1 class="job">Team Member</h1>
+                                <h2 class="name">Nipuni Jayawardena</h2>
+                                <h3 class="title">E/19/167</h3>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="fab  social-icon"><span class="icon-github" aria-hidden="true"></span></a>
+                                <a href="#" class="fab  social-icon"><span class="icon-mail4" aria-hidden="true"></span></a>
+                                <a href="#" class="fab  social-icon"><span class="icon-linkedin" aria-hidden="true"></span></a>
+                            </div>
+                        </div>             
+                    </div> 
+
+                    <div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="images/avatars/Chaminda.jpg" alt="Profile Image" class="profile-img">
+                            </div>
+                            <div class="card-body">
+                                <h1 class="job">Team Member</h1>
+                                <h2 class="name">Chaminda Weerasinghe</h2>
+                                <h3 class="title">E/19/423</h3>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="fab  social-icon"><span class="icon-github" aria-hidden="true"></span></a>
+                                <a href="#" class="fab  social-icon"><span class="icon-mail4" aria-hidden="true"></span></a>
+                                <a href="#" class="fab  social-icon"><span class="icon-linkedin" aria-hidden="true"></span></a>
+                            </div>
+                        </div>             
+                    </div> 
+
+                     
+
+                </div> <!-- end slides -->
+
+            </div> <!-- end testimonial-slider -->         
+            
+        </div> <!-- end flex-container -->
+
+    </section> <!-- end testimonials -->
+    
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="footer-main">
+            <div class="row">  
+
+                <!-- <div class="col-three md-1-3 tab-full footer-info">            
+
+                    <div class="footer-logo"></div>
+
+                    <!-- <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+                    </p> -->
+
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                    
+                    
+                </div> <!-- end footer-info -->
+
+                <div class="col-three md-1-3 tab-1-2 mob-full footer-contact">
+
+                    <!-- <h4>Contact</h4>
+
+                    <p>
+                    1600 Amphitheatre Parkway<br>
+                    Mountain View, CA <br>
+                    94043 US<br>		        
+                    </p>
+
+                    <p>
+                    someone@dazzlesite.com <br>
+                    Phone: (+63) 555 1212 <br>
+                    Fax: (+63) 555 0100    
+                    </p>                     -->
+
+                </div> <!-- end footer-contact -->   -->
+
+                <div class="col-two md-1-3 tab-1-2 mob-full footer-site-links">
+
+                    <h4>Site Links</h4>
+
+                    <ul class="list-links">
+                        <!-- <li><a href="#Home">Home</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li> -->
+                        <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                        <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+				        <li><a class="smoothscroll"  href="#pricing" title="pricing">Architecture</a></li>
+                        <li><a class="smoothscroll"  href="#Experiments" title="pricing">Experiments</a></li>
+				        <li><a class="smoothscroll"  href="#design" title="Design">Implementation</a></li>
+				        <li><a class="smoothscroll"  href="#download" title="download">More</a></li>
+                    </ul>	      		
+                            
+                </div> <!-- end footer-site-links --> 
+
+                <div class="col-four md-1-2 tab-full footer-subscribe">
+
+                    <!-- <h4>Our Newsletter</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <div class="subscribe-form">
+                
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required=""> 
+                
+                            <input type="submit" name="subscribe" value="Send">
+                
+                            <label for="mc-email" class="subscribe-message"></label>
+                
+                        </form>
+
+                    </div>	      		 -->
+                            
+                </div> <!-- end footer-subscribe -->         
+
+            </div> <!-- /row -->
+        </div> <!-- end footer-main -->
+
+
+      <div class="footer-bottom">
+
+      	<div class="row">
+
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright Dazzle 2018.</span> 
+		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
+		         </div>
+
+		         <div id="go-top">
+		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+
+      	</div> <!-- end footer-bottom -->     	
+
+      </div>
+
+    </footer>
+
+    <div id="preloader"> 
+    	<div id="loader"></div>
+    </div>  
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
