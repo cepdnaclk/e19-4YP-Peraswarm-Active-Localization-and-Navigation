@@ -253,6 +253,7 @@ h6, .h06 {
 
 p img {
   margin: 0;
+ object-fit: contain;
 }
 
 p.lead {
